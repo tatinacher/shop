@@ -46,7 +46,10 @@ export const Header = ({ menu, themeButton }: HeaderProps) => {
   };
 
   return (
-    <AppBar position="sticky">
+    <AppBar
+      position="sticky"
+      sx={{ boxShadow: 0, borderRadius: "10px", padding: "30px" }}
+    >
       <MobileMenu
         handleOpenNavMenu={handleOpenNavMenu}
         handleCloseNavMenu={handleCloseNavMenu}
@@ -141,7 +144,7 @@ function DesktopMenu({
               data-id={id}
               onClick={handleCloseNavMenu}
               //   sx={{ my: 2, color: "primary.text", display: "block" }}
-              sx={{ color: "white" }}
+              sx={{ color: "primary.light" }}
             >
               {name}
             </Button>

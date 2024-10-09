@@ -1,27 +1,35 @@
-import { Container } from "@mui/material";
+import { useReducer } from "react";
+import { Container, Switch, ThemeProvider } from "@mui/material";
+
 import { Header } from "./ui/header";
+import { theme } from "./app/theme";
 
 const menu = [
   {
-    name: "На главную",
+    name: "Home",
     id: "main",
   },
   {
-    name: "Проекты",
+    name: "Catalog",
     id: "projects",
   },
   {
-    name: "Связаться со мной",
+    name: "About",
     id: "connect",
   },
 ];
 
 function App() {
+  const [isDarkTheme, toggleTheme] = useReducer((is) => !is, false);
+
   return (
-    <>
-      <Header menu={menu} themeButton={<div>123</div>} />
+    <ThemeProvider theme={isDarkTheme ? theme.dark : theme.light}>
+      <Header
+        menu={menu}
+        themeButton={<Switch checked={isDarkTheme} onChange={toggleTheme} />}
+      />
       <Container maxWidth="sm">{/* <Footer /> */}</Container>
-    </>
+    </ThemeProvider>
   );
 }
 
