@@ -48,7 +48,12 @@ export const Header = ({ menu, themeButton }: HeaderProps) => {
   return (
     <AppBar
       position="sticky"
-      sx={{ boxShadow: 0, borderRadius: "10px", padding: "30px" }}
+      sx={{
+        boxShadow: 0,
+        borderRadius: "10px",
+        padding: "30px",
+        fontFamily: "Open Sans",
+      }}
     >
       <MobileMenu
         handleOpenNavMenu={handleOpenNavMenu}

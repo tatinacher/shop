@@ -3,6 +3,7 @@ import { Container, Switch, ThemeProvider } from "@mui/material";
 
 import { Header } from "./ui/header";
 import { theme } from "./app/theme";
+import { Router } from "./app/router";
 
 const menu = [
   {
@@ -28,7 +29,8 @@ function App() {
         menu={menu}
         themeButton={<Switch checked={isDarkTheme} onChange={toggleTheme} />}
       />
-      <Container maxWidth="sm">{/* <Footer /> */}</Container>
+      <Router />
+      {/* <Footer /> */}
     </ThemeProvider>
   );
 }
