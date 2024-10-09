@@ -1,5 +1,5 @@
 import { useReducer } from "react";
-import { Container, Switch, ThemeProvider } from "@mui/material";
+import { Switch, ThemeProvider } from "@mui/material";
 
 import { Header } from "./ui/header";
 import { theme } from "./app/theme";
