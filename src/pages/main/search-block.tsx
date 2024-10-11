@@ -6,9 +6,10 @@ import {
   MenuItem,
   Select,
   SelectChangeEvent,
-  Typography,
 } from "@mui/material";
 import { useState } from "react";
+import { BackgroundBox } from "../../ui/background-box";
+import { TypographyHeader } from "../../ui/typography";
 
 export function SearchDisplayBlock() {
   const [age, setAge] = useState("");
@@ -17,47 +18,8 @@ export function SearchDisplayBlock() {
     setAge(event.target.value);
   };
   return (
-    <Box
-      sx={{
-        height: {
-          xs: "400px",
-          sm: "400px",
-          md: "500px",
-          lg: "600px",
-        },
-        backgroundImage: 'url("./back4.webp")',
-        backgroundPosition: "center center",
-        backgroundSize: {
-          xs: "auto 100%",
-          sm: "100%",
-        },
-        backgroundRepeat: "no-repeat",
-        margin: "30px 0",
-        borderRadius: "15px",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
-      }}
-    >
-      <Typography
-        variant="h1"
-        sx={{
-          color: "white",
-          fontFamily: "sans-serif",
-          fontWeight: 800,
-          opacity: 0.7,
-          padding: "30px",
-          maxWidth: "900px",
-          fontSize: {
-            xs: "30px",
-            sm: "70px",
-            md: "100px",
-            lg: "130px",
-          },
-        }}
-      >
-        FURNITURE FOR FUTURE
-      </Typography>
+    <BackgroundBox image={"./back4.webp"}>
+      <TypographyHeader>FURNITURE FOR FUTURE</TypographyHeader>
       <Box
         sx={{
           margin: "30px",
@@ -135,6 +97,6 @@ export function SearchDisplayBlock() {
           Search
         </Button>
       </Box>
-    </Box>
+    </BackgroundBox>
   );
 }
