@@ -8,7 +8,7 @@ const lightTheme = createTheme({
       light: "#161614",
     },
     secondary: {
-      main: green[500],
+      main: "#3b3a38",
     },
     mode: "light",
   },

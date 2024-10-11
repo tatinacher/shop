@@ -11,6 +11,14 @@ import {
 import { useState } from "react";
 
 export const MainPage = () => {
+  return (
+    <div>
+      <SearchDisplayBlock />
+    </div>
+  );
+};
+
+function SearchDisplayBlock() {
   const [age, setAge] = useState("");
 
   const handleChange = (event: SelectChangeEvent<string>) => {
@@ -19,10 +27,18 @@ export const MainPage = () => {
   return (
     <Box
       sx={{
-        height: "600px",
+        height: {
+          xs: "400px",
+          sm: "400px",
+          md: "500px",
+          lg: "600px",
+        },
         backgroundImage: 'url("./back4.webp")',
         backgroundPosition: "center center",
-        backgroundSize: "100%",
+        backgroundSize: {
+          xs: "auto 100%",
+          sm: "100%",
+        },
         backgroundRepeat: "no-repeat",
         margin: "30px 0",
         borderRadius: "15px",
@@ -40,7 +56,12 @@ export const MainPage = () => {
           opacity: 0.7,
           padding: "30px",
           maxWidth: "900px",
-          fontSize: "130px",
+          fontSize: {
+            xs: "30px",
+            sm: "70px",
+            md: "100px",
+            lg: "130px",
+          },
         }}
       >
         FURNITURE FOR FUTURE
@@ -52,17 +73,24 @@ export const MainPage = () => {
           borderRadius: "15px",
           backgroundColor: "primary.main",
           display: "flex",
+          flexDirection: {
+            xs: "column",
+            sm: "row",
+          },
           gap: "10px",
         }}
       >
         <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-label">Age</InputLabel>
+          <InputLabel id="demo-simple-select-label" size="small">
+            Age
+          </InputLabel>
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
             value={age}
             label="Age"
             onChange={handleChange}
+            size="small"
           >
             <MenuItem value={10}>Ten</MenuItem>
             <MenuItem value={20}>Twenty</MenuItem>
@@ -70,13 +98,16 @@ export const MainPage = () => {
           </Select>
         </FormControl>
         <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-label">Age</InputLabel>
+          <InputLabel id="demo-simple-select-label" size="small">
+            Age
+          </InputLabel>
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
             value={age}
             label="Age"
             onChange={handleChange}
+            size="small"
           >
             <MenuItem value={10}>Ten</MenuItem>
             <MenuItem value={20}>Twenty</MenuItem>
@@ -84,13 +115,16 @@ export const MainPage = () => {
           </Select>
         </FormControl>
         <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-label">Age</InputLabel>
+          <InputLabel id="demo-simple-select-label" size="small">
+            Age
+          </InputLabel>
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
             value={age}
             label="Age"
             onChange={handleChange}
+            size="small"
           >
             <MenuItem value={10}>Ten</MenuItem>
             <MenuItem value={20}>Twenty</MenuItem>
@@ -98,11 +132,12 @@ export const MainPage = () => {
           </Select>
         </FormControl>
         <Button
-          variant="contained"
+          size="small"
           sx={{
             boxShadow: 0,
             padding: "0 15px",
             boxSizing: "content-box",
+            backgroundColor: "secondary.main",
           }}
         >
           Search
@@ -110,4 +145,4 @@ export const MainPage = () => {
       </Box>
     </Box>
   );
-};
+}
