@@ -47,7 +47,8 @@ export const Header = ({ menu, themeButton }: HeaderProps) => {
 
   return (
     <AppBar
-      position="sticky"
+      // position="sticky"
+      position="static"
       sx={{
         boxShadow: 0,
         borderRadius: "10px",

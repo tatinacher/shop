@@ -10,15 +10,7 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 
-export const MainPage = () => {
-  return (
-    <div>
-      <SearchDisplayBlock />
-    </div>
-  );
-};
-
-function SearchDisplayBlock() {
+export function SearchDisplayBlock() {
   const [age, setAge] = useState("");
 
   const handleChange = (event: SelectChangeEvent<string>) => {
