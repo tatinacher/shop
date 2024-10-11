@@ -16,7 +16,8 @@ export function Connect() {
       >
         <Box
           sx={{
-            maxWidth: "320px",
+            maxWidth: "300px",
+            opacity: 0.95,
             display: "flex",
             flexDirection: "column",
             gap: "10px",
