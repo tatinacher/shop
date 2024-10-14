@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import React from "react";
 
 interface BackgroundBoxProps {
-  image: string;
+  image?: string;
   children: React.ReactNode;
 }
 
@@ -24,7 +24,7 @@ export function BackgroundBox({ image, children }: BackgroundBoxProps) {
         },
         backgroundRepeat: "no-repeat",
         margin: "60px 0",
-        borderRadius: "15px",
+        borderRadius: "30px",
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",

@@ -3,6 +3,7 @@ import { SearchDisplayBlock } from "./search-block";
 import { Connect } from "./connect";
 import { DeliveryInfo } from "./delivery-info";
 import { Box, Container } from "@mui/material";
+import { SliderBlock } from "./slider";
 
 export const MainPage = () => {
   return (
@@ -15,6 +16,8 @@ export const MainPage = () => {
       <Container sx={{ padding: "120px 0" }}>
         <DeliveryInfo />
       </Container>
+      <SliderBlock />
+      <SearchDisplayBlock />
     </Box>
   );
 };
