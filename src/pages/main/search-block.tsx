@@ -18,8 +18,10 @@ export function SearchDisplayBlock() {
     setAge(event.target.value);
   };
   return (
-    <BackgroundBox image={"./back4.webp"}>
-      <TypographyHeader>FURNITURE FOR FUTURE</TypographyHeader>
+    <BackgroundBox image={"./3.png"}>
+      <div style={{ marginLeft: "50px" }}>
+        <TypographyHeader>FURNITURE FOR FUTURE</TypographyHeader>
+      </div>
       <Box
         sx={{
           margin: "30px",

@@ -4,6 +4,7 @@ import { Connect } from "./connect";
 import { DeliveryInfo } from "./delivery-info";
 import { Box, Container } from "@mui/material";
 import { SliderBlock } from "./slider";
+import { Popular } from "./popular";
 
 export const MainPage = () => {
   return (
@@ -17,7 +18,9 @@ export const MainPage = () => {
         <DeliveryInfo />
       </Container>
       <SliderBlock />
-      <SearchDisplayBlock />
+      <Container sx={{ padding: "120px 0" }}>
+        <Popular />
+      </Container>
     </Box>
   );
 };

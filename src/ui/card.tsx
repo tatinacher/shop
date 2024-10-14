@@ -22,7 +22,6 @@ export const ItemCard = ({ price, name, image, color, tag }: ItemCardProps) => {
   return (
     <Card
       sx={{
-        maxWidth: 345,
         position: "relative",
         boxShadow: 0,
         border: "1px solid",
