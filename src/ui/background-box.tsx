@@ -23,7 +23,7 @@ export function BackgroundBox({ image, children }: BackgroundBoxProps) {
           sm: "100%",
         },
         backgroundRepeat: "no-repeat",
-        margin: "30px 0",
+        margin: "60px 0",
         borderRadius: "15px",
         display: "flex",
         flexDirection: "column",

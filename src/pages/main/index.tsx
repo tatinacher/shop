@@ -1,14 +1,20 @@
-import { Container } from "@mui/material";
 import { Catalog } from "./catalog";
 import { SearchDisplayBlock } from "./search-block";
 import { Connect } from "./connect";
+import { DeliveryInfo } from "./delivery-info";
+import { Box, Container } from "@mui/material";
 
 export const MainPage = () => {
   return (
-    <Container>
+    <Box sx={{ margin: "0 30px" }}>
       <SearchDisplayBlock />
-      <Catalog />
+      <Container sx={{ padding: "120px 0" }}>
+        <Catalog />
+      </Container>
       <Connect />
-    </Container>
+      <Container sx={{ padding: "120px 0" }}>
+        <DeliveryInfo />
+      </Container>
+    </Box>
   );
 };

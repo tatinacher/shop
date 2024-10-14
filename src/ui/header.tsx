@@ -2,7 +2,6 @@ import {
   AppBar,
   Box,
   Button,
-  Container,
   IconButton,
   Menu,
   MenuItem,
@@ -47,13 +46,14 @@ export const Header = ({ menu, themeButton }: HeaderProps) => {
 
   return (
     <AppBar
-      // position="sticky"
-      position="static"
+      position="sticky"
       sx={{
         boxShadow: 0,
-        borderRadius: "10px",
+        // borderRadius: "10px",
         padding: "30px",
         fontFamily: "Open Sans",
+        backgroundColor: "#fff",
+        borderBottom: "1px solid #ddd",
       }}
     >
       <MobileMenu
@@ -62,6 +62,7 @@ export const Header = ({ menu, themeButton }: HeaderProps) => {
         anchorElNav={anchorElNav}
         menu={menu}
       />
+
       <DesktopMenu
         themeButton={themeButton}
         menu={menu}
@@ -134,30 +135,28 @@ function DesktopMenu({
   ) => void;
 }) {
   return (
-    <Container>
-      <Box
-        sx={{
-          flexGrow: 1,
-          display: { xs: "none", md: "flex" },
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
-      >
-        <div style={{ display: "flex" }}>
-          {menu.map(({ name, id }) => (
-            <Button
-              key={id}
-              data-id={id}
-              onClick={handleCloseNavMenu}
-              //   sx={{ my: 2, color: "primary.text", display: "block" }}
-              sx={{ color: "primary.light" }}
-            >
-              {name}
-            </Button>
-          ))}
-        </div>
-        <div>{themeButton}</div>
-      </Box>
-    </Container>
+    <Box
+      sx={{
+        flexGrow: 1,
+        display: { xs: "none", md: "flex" },
+        alignItems: "center",
+        justifyContent: "space-between",
+      }}
+    >
+      <div style={{ display: "flex" }}>
+        {menu.map(({ name, id }) => (
+          <Button
+            key={id}
+            data-id={id}
+            onClick={handleCloseNavMenu}
+            //   sx={{ my: 2, color: "primary.text", display: "block" }}
+            sx={{ color: "primary.light" }}
+          >
+            {name}
+          </Button>
+        ))}
+      </div>
+      <div>{themeButton}</div>
+    </Box>
   );
 }

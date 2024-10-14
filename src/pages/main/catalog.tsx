@@ -68,7 +68,7 @@ export function Catalog() {
           See all collection
         </Button>
       </Box>
-      <Box sx={{ flexGrow: 1 }}>
+      <Box sx={{ flexGrow: 1, marginTop: "45px" }}>
         <Grid
           container
           spacing={{ xs: 1, sm: 2, md: 3 }}
