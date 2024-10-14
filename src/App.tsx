@@ -1,9 +1,9 @@
 import { useReducer } from "react";
 import { Switch, ThemeProvider } from "@mui/material";
+import { Outlet } from "react-router-dom";
 
 import { Header } from "./ui/header";
 import { theme } from "./app/theme";
-import { Router } from "./app/router";
 
 const menu = [
   {
@@ -12,11 +12,11 @@ const menu = [
   },
   {
     name: "Catalog",
-    id: "projects",
+    id: "catalog",
   },
   {
     name: "About",
-    id: "connect",
+    id: "about",
   },
 ];
 
@@ -29,7 +29,7 @@ function App() {
         menu={menu}
         themeButton={<Switch checked={isDarkTheme} onChange={toggleTheme} />}
       />
-      <Router />
+      <Outlet />
       {/* <Footer /> */}
     </ThemeProvider>
   );

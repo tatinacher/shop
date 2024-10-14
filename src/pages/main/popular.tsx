@@ -1,5 +1,5 @@
-import { Box, Button, Grid2 as Grid, Typography } from "@mui/material";
-import { ItemCard } from "../../ui/card";
+import { Box, Button, Typography } from "@mui/material";
+import { Catalog } from "../../features/catalog";
 
 const catalog = [
   {
@@ -47,15 +47,7 @@ export function Popular() {
           See all collection
         </Button>
       </Box>
-      <Box sx={{ flexGrow: 1, marginTop: "45px" }}>
-        <Grid container spacing={{ xs: 1, sm: 2, md: 3 }} direction="row">
-          {catalog.map((card) => (
-            <Grid size={{ xs: 12, sm: 6, md: 4 }}>
-              <ItemCard {...card} />
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
+      <Catalog catalog={catalog} />
     </div>
   );
 }

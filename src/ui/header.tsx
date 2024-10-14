@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { SyntheticEvent, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 type MenuType = {
   name: string;
@@ -22,6 +23,8 @@ interface HeaderProps {
 }
 
 export const Header = ({ menu, themeButton }: HeaderProps) => {
+  const navigate = useNavigate();
+
   const [anchorElNav, setAnchorElNav] = useState<MenuProps["anchorEl"]>(null);
 
   const handleOpenNavMenu = ({
@@ -34,14 +37,12 @@ export const Header = ({ menu, themeButton }: HeaderProps) => {
     currentTarget,
   }: SyntheticEvent<HTMLButtonElement | HTMLLIElement>) => {
     const id = currentTarget?.dataset?.id;
-    let section = null;
-    if (id && document) {
-      section = document.getElementById(id);
+    console.log(id);
+    if (id === "main") {
+      navigate("/");
+    } else if (id) {
+      navigate(id);
     }
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-    setAnchorElNav(null);
   };
 
   return (
@@ -149,7 +150,6 @@ function DesktopMenu({
             key={id}
             data-id={id}
             onClick={handleCloseNavMenu}
-            //   sx={{ my: 2, color: "primary.text", display: "block" }}
             sx={{ color: "primary.light" }}
           >
             {name}
