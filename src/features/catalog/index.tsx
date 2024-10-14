@@ -17,8 +17,8 @@ export function Catalog({ catalog }: CatalogProps) {
         alignItems="center"
         justifyContent="center"
       >
-        {catalog.map((card) => (
-          <Grid size={{ xs: 12, sm: 6, md: 4 }}>
+        {catalog.map((card, key) => (
+          <Grid size={{ xs: 12, sm: 6, md: 4 }} key={key}>
             <ItemCard {...card} />
           </Grid>
         ))}

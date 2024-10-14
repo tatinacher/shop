@@ -5,8 +5,11 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.tsx";
 import "./index.css";
 import { AboutPage, CatalogPage, MainPage } from "./pages";
+import { catalog } from "./app/data.ts";
 
 /// <reference types="vite-plugin-svgr/client" />
+
+const data = [...catalog, ...catalog, ...catalog];
 
 const router = createBrowserRouter([
   {
@@ -19,7 +22,7 @@ const router = createBrowserRouter([
       },
       {
         path: "catalog",
-        element: <CatalogPage />,
+        element: <CatalogPage data={data} />,
       },
       {
         path: "about",
