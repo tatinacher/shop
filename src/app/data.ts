@@ -1,5 +1,5 @@
 export type CatalogItem = {
-  category: string;
+  category?: string;
   color: number;
   image: string;
   name: string;
