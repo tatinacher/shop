@@ -53,8 +53,10 @@ export const Header = ({ menu, themeButton }: HeaderProps) => {
         // borderRadius: "10px",
         padding: "30px",
         fontFamily: "Open Sans",
-        backgroundColor: "#fff",
-        borderBottom: "1px solid #ddd",
+        backgroundColor: "secondary.main",
+        color: "secondary.contrastText",
+        borderBottom: "1px solid",
+        borderColor: "secondary.light",
       }}
     >
       <MobileMenu
@@ -150,7 +152,7 @@ function DesktopMenu({
             key={id}
             data-id={id}
             onClick={handleCloseNavMenu}
-            sx={{ color: "primary.light" }}
+            sx={{ color: "secondary.contrastText" }}
           >
             {name}
           </Button>

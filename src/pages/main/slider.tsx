@@ -41,7 +41,7 @@ function Item({ item }: ItemProps) {
       sx={{
         display: "flex",
         boxShadow: "none",
-        backgroundColor: "primary.main",
+        backgroundColor: "secondary.light",
         borderRadius: "30px",
         height: {
           xs: "400px",

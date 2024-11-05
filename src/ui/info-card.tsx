@@ -4,9 +4,15 @@ interface InfoCardProps {
   icon?: React.ReactNode;
   description: string;
   title: string;
+  isDark?: boolean;
 }
 
-export const InfoCard = ({ title, description, icon }: InfoCardProps) => {
+export const InfoCard = ({
+  title,
+  description,
+  icon,
+  isDark,
+}: InfoCardProps) => {
   return (
     <Card
       sx={{
@@ -15,8 +21,8 @@ export const InfoCard = ({ title, description, icon }: InfoCardProps) => {
         position: "relative",
         boxShadow: 0,
         border: "1px solid",
-        borderColor: "primary.main",
-        backgroundColor: "primary.main",
+        borderColor: "transparent",
+        backgroundColor: "secondary.light",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -27,10 +33,13 @@ export const InfoCard = ({ title, description, icon }: InfoCardProps) => {
         textAlign: "center",
       }}
     >
-      {icon}
+      <div style={{ filter: isDark ? "invert(1)" : "" }}>{icon}</div>
       <Typography
         variant="h5"
-        sx={{ margin: "20px 0 5px", letterSpacing: "1px" }}
+        sx={{
+          margin: "20px 0 5px",
+          letterSpacing: "1px",
+        }}
       >
         {title}
       </Typography>

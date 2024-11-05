@@ -1,9 +1,11 @@
-import { useReducer } from "react";
-import { Switch, ThemeProvider } from "@mui/material";
+import { Box, Switch, ThemeProvider } from "@mui/material";
 import { Outlet } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 import { Header } from "./ui/header";
 import { theme } from "./app/theme";
+import { RootState } from "./app/store";
+import { toggle } from "./features/theme";
 
 const menu = [
   {
@@ -21,16 +23,25 @@ const menu = [
 ];
 
 function App() {
-  const [isDarkTheme, toggleTheme] = useReducer((is) => !is, false);
+  const isDarkTheme = useSelector((state: RootState) => state.theme.value);
+  const dispatch = useDispatch();
 
   return (
     <ThemeProvider theme={isDarkTheme ? theme.dark : theme.light}>
-      <Header
-        menu={menu}
-        themeButton={<Switch checked={isDarkTheme} onChange={toggleTheme} />}
-      />
-      <Outlet />
-      {/* <Footer /> */}
+      <Box
+        sx={{
+          backgroundColor: "secondary.main",
+          color: "secondary.contrastText",
+        }}
+      >
+        <Header
+          menu={menu}
+          themeButton={
+            <Switch checked={isDarkTheme} onChange={() => dispatch(toggle())} />
+          }
+        />
+        <Outlet />
+      </Box>
     </ThemeProvider>
   );
 }

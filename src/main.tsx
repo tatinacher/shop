@@ -6,6 +6,8 @@ import App from "./App.tsx";
 import "./index.css";
 import { AboutPage, CatalogPage, MainPage } from "./pages";
 import { catalog } from "./app/data.ts";
+import { Provider } from "react-redux";
+import { store } from "./app/store.ts";
 
 /// <reference types="vite-plugin-svgr/client" />
 
@@ -34,6 +36,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </StrictMode>
 );

@@ -2,6 +2,8 @@ import { Box } from "@mui/material";
 import { InfoCard } from "../../ui/info-card";
 
 import { UndoIcon, HeadphonesIcon, DeliveryIcon } from "../../app/icons";
+import { useSelector } from "react-redux";
+import { RootState } from "../../app/store";
 
 const iconStyle = {
   width: "120px",
@@ -27,10 +29,11 @@ const infoList = [
 ];
 
 export function DeliveryInfo() {
+  const isDark = useSelector((state: RootState) => state.theme.value);
   return (
     <Box sx={{ display: "flex", justifyContent: "space-between" }}>
       {infoList.map((card) => (
-        <InfoCard {...card} />
+        <InfoCard isDark={isDark} {...card} />
       ))}
     </Box>
   );

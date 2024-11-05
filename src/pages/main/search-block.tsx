@@ -27,7 +27,7 @@ export function SearchDisplayBlock() {
           margin: "30px",
           padding: "30px",
           borderRadius: "15px",
-          backgroundColor: "primary.main",
+          backgroundColor: "secondary.main",
           display: "flex",
           flexDirection: {
             xs: "column",
@@ -93,7 +93,8 @@ export function SearchDisplayBlock() {
             boxShadow: 0,
             padding: "0 15px",
             boxSizing: "content-box",
-            backgroundColor: "secondary.main",
+            backgroundColor: "primary.main",
+            color: "primary.contrastText",
           }}
         >
           Search

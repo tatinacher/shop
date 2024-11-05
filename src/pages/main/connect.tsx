@@ -47,7 +47,8 @@ export function Connect() {
                 sx={{
                   boxShadow: 0,
                   boxSizing: "content-box",
-                  backgroundColor: "secondary.main",
+                  backgroundColor: "primary.main",
+                  color: "primary.contrastText",
                 }}
               >
                 Subscribe!

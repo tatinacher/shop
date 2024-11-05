@@ -25,8 +25,8 @@ export const ItemCard = ({ price, name, image, color, tag }: ItemCardProps) => {
         position: "relative",
         boxShadow: 0,
         border: "1px solid",
-        borderColor: "primary.main",
-        backgroundColor: "primary.main",
+        borderColor: "secondary.light",
+        backgroundColor: "secondary.light",
       }}
     >
       <Chip
@@ -38,6 +38,7 @@ export const ItemCard = ({ price, name, image, color, tag }: ItemCardProps) => {
           left: "10px",
           backgroundColor: "#fff",
           border: 0,
+          color: "secondary.contrastText",
         }}
       />
       <Chip
@@ -49,12 +50,12 @@ export const ItemCard = ({ price, name, image, color, tag }: ItemCardProps) => {
           right: "10px",
           backgroundColor: "#fff",
           border: 0,
+          color: "secondary.contrastText",
         }}
       />
       <CardMedia
         sx={{
           height: 190,
-          // borderRadius: "5px",
           backgroundSize: "100% auto",
         }}
         image={image}
@@ -72,7 +73,7 @@ export const ItemCard = ({ price, name, image, color, tag }: ItemCardProps) => {
           <Typography>${price}</Typography>
         </Box>
         <IconButton sx={{ height: "56px" }}>
-          <Avatar sx={{ backgroundColor: "secondary.light" }}>
+          <Avatar sx={{ backgroundColor: "secondary.contrastText" }}>
             <ShoppingBagIcon />
           </Avatar>
         </IconButton>
